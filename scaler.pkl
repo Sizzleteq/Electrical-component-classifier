@@ -1,0 +1,70 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "d5fb48c0-8bcb-4563-abbe-de166a2ccec7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Scaler saved as 'scaler.pkl'\n"
+     ]
+    }
+   ],
+   "source": [
+    "from sklearn.preprocessing import StandardScaler\n",
+    "import joblib\n",
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "\n",
+    "# Example ARX features (replace this with your real feature data)\n",
+    "X = pd.DataFrame({\n",
+    "    'y_lag1': np.random.rand(100),\n",
+    "    'y_lag2': np.random.rand(100),\n",
+    "    'u': np.random.rand(100),\n",
+    "    'u_lag1': np.random.rand(100)\n",
+    "})\n",
+    "\n",
+    "# Create and fit the scaler\n",
+    "scaler = StandardScaler()\n",
+    "scaler.fit(X)\n",
+    "\n",
+    "# Save the scaler as a .pkl file\n",
+    "joblib.dump(scaler, 'scaler.pkl')\n",
+    "print(\"Scaler saved as 'scaler.pkl'\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dab56f09-1bb6-4916-b580-59a24b7584ce",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
